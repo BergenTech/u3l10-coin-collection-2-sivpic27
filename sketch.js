@@ -4,6 +4,7 @@ let coinX, coinY;
 let obstacleX, obstacleY;
 let score = 0;
 let gameOver = false;
+let obstacleSpeed = 3.5
 
 function setup() {
   createCanvas(400, 400);
@@ -77,16 +78,13 @@ function movePlayer() {
     playerY += 5;
   }
   
-  // TODO: Add up/down movement
-  // HINT: Use UP_ARROW and DOWN_ARROW keys
-  // Movement should be 5 pixels per frame
-  
   // TODO: Add boundary checking
   // HINT: Keep player within canvas bounds
   // Check against 0, width, and height
 }
 
 function moveObstacle() {
+  obstacleX += obstacleSpeed
   // TODO: Move obstacle from left to right
   // HINT: Increase obstacleX by obstacleSpeed
   
