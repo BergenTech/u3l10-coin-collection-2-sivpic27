@@ -102,11 +102,11 @@ function checkCoinCollection() {
 
 function checkCollisions() {
   // checks if the obstace is hit 3 times
-  distance_to_obs = dist(playerX, playerY,obstacleX, obstacleY)
-  if (distance_to_obs < 20){
+  distance_to_obs = dist(playerX, playerY, obstacleX, obstacleY)
+  if (distance_to_obs < 20) {
     hits += 1
     initializeGame()
-    if (hits >= 3){
+    if (hits >= 3) {
       gameOver = true
     }
   }
@@ -122,13 +122,13 @@ function displayStats() {
 }
 
 function displayGameOver() {
-  if (gameOver){
+  if (gameOver) {
     textAlign(CENTER, CENTER)
     textSize(50)
-    text("GAME OVER", width/2, height/2)
+    text("GAME OVER", width / 2, height / 2)
     textSize(20)
-    text("Score: " + score, width/2, 245)
-    text("Press R to restart", width/2, 275)
+    text("Score: " + score, width / 2, 245)
+    text("Press R to restart", width / 2, 275)
   }
 }
 
@@ -142,16 +142,16 @@ function resetGame() {
   initializeGame();
   score = 0
   hits = 0
-  speed = 3.5
+  obstacleSpeed = 3.5
   gameOver = false
 }
 
 function keyPressed() {
-  if (gameOver){
-  if (key === 'r' || key === 'R'){
-    resetGame();
+  if (gameOver) {
+    if (key === 'r' || key === 'R') {
+      resetGame();
+    }
   }
-}
   // TODO: Check for 'R' key to restart game
   // HINT: Use key === 'r' || key === 'R'
   // Only works when game is over
