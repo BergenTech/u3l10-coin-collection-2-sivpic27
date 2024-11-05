@@ -77,16 +77,17 @@ function movePlayer() {
   if (keyIsDown(DOWN_ARROW)) {
     playerY += 5;
   }
-  
-  // TODO: Add boundary checking
-  // HINT: Keep player within canvas bounds
-  // Check against 0, width, and height
 }
 
 function moveObstacle() {
-  obstacleX += obstacleSpeed
+  obstacleY += obstacleSpeed
+  if (obstacleY > height){
+    obstacleY = 0
+    obstacleSpeed += 0.5
+    obstacleX = random(10,width-10)
+  }
   // TODO: Move obstacle from left to right
-  // HINT: Increase obstacleX by obstacleSpeed
+  // HINT: Increase obstacleY by obstacleSpeed
   
   // TODO: Reset obstacle when it goes off screen
   // HINT: Check if obstacleX > width
